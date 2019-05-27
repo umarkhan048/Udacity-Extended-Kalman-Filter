@@ -15,7 +15,7 @@ VectorXd Tools::CalculateRMSE(const vector<VectorXd> &estimations,
    * TODO: Calculate the RMSE here.
    */
   VectorXd rmse(4);
-  rmse << 0,0,0,0;
+  rmse << 0, 0, 0, 0;
   
   // Checking the validity of the inputs
   if (estimations.size() != ground_truth.size() || estimations.size() == 0)
@@ -24,7 +24,7 @@ VectorXd Tools::CalculateRMSE(const vector<VectorXd> &estimations,
     return rmse;
   }
   
-  for (unsigned int i = 0; i <= estimations.size(); i++)
+  for (unsigned int i = 0; i < estimations.size(); i++)
   {
     VectorXd diff = estimations[i] - ground_truth[i];
     diff = diff.array() * diff.array();
